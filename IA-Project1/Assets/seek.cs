@@ -5,7 +5,7 @@ using UnityEngine;
 public class seek : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject target;
+    public GameObject target, target2;
     public float maxVelocity;
     public float slowDistance;
     public float stopDistance;
