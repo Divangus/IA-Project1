@@ -12,7 +12,7 @@ public class steering_marina : MonoBehaviour
     public float stopDistance;
     public Vector3 movement;
     public Quaternion rotation;
-    int ds = 1;
+    //int ds = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class steering_marina : MonoBehaviour
     void Update()
     {
         if (Vector3.Distance(target1.transform.position, transform.position) < stopDistance) {
-            ds = 2;
+            //ds = 2;
             return;
         }
         Seek(target1); 
