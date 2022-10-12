@@ -8,7 +8,7 @@ public class flock : MonoBehaviour
 
     public FlockManager myManager;
     Vector3 direction;
-    public float speed = 3.0f;
+    float speed = 0;
     float freq = 0f;
 
     // Start is called before the first frame update
@@ -96,5 +96,12 @@ public class flock : MonoBehaviour
             }
         }
         return separation;
+    }
+
+    Vector3 FollowLeader()
+    {
+        Vector3 followLeader = Vector3.zero;
+
+        return followLeader;
     }
 }
