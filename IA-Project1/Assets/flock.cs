@@ -24,7 +24,7 @@ public class flock : MonoBehaviour
         if (freq > 0.5)
         {
             freq -= 0.5f;
-            direction = (Cohesion() + Align() + Separation()).normalized * speed;
+            direction = (Cohesion() + Align() + Separation() + FollowLeader()).normalized * speed;
         }
 
         transform.rotation = Quaternion.Slerp(transform.rotation,
@@ -52,8 +52,20 @@ public class flock : MonoBehaviour
             }
         }
         if (num > 0)
-            cohesion = (cohesion / num - transform.position).normalized * speed;
-        return cohesion;
+        {
+            return (cohesion / num - transform.position).normalized * speed;
+        }
+
+        //foreach (GameObject go in myManager.allPig)
+        //{
+        //    if (go != this.gameObject)
+        //    {
+        //        cohesion += go.transform.position;
+        //        num++;
+        //    }
+        //}
+
+        return (cohesion / num - transform.position).normalized * speed;
     }
 
    Vector3 Align()
@@ -101,6 +113,8 @@ public class flock : MonoBehaviour
     Vector3 FollowLeader()
     {
         Vector3 followLeader = Vector3.zero;
+
+        followLeader = (myManager.lider.transform.position - transform.position).normalized;
 
         return followLeader;
     }
