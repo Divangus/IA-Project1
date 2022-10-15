@@ -8,8 +8,9 @@ public class flock : MonoBehaviour
 
     public FlockManager myManager;
     Vector3 direction;
-    float speed = 0;
+    float speed = 2;
     float freq = 0f;
+    public float freqA = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,15 +22,13 @@ public class flock : MonoBehaviour
     void Update()
     {
         freq += Time.deltaTime;
-        if (freq > 0.5)
+        if (freq > freqA)
         {
-            freq -= 0.5f;
-            direction = (Cohesion() + Align() + Separation() /*+ FollowLeader()*/).normalized * speed;
+            freq -= freqA;
+            direction = (Cohesion() + Align() + Separation() + (FollowLeader() * 5)).normalized * speed;
         }
 
-        transform.rotation = Quaternion.Slerp(transform.rotation,
-                                      Quaternion.LookRotation(direction),
-                                      myManager.rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(direction), myManager.rotationSpeed * Time.deltaTime);
         transform.Translate(0.0f, 0.0f, Time.deltaTime * speed);
 
     }
@@ -53,19 +52,25 @@ public class flock : MonoBehaviour
         }
         if (num > 0)
         {
-            return (cohesion / num - transform.position).normalized * speed;
+            return (cohesion / num - transform.position).normalized;
         }
 
-        //foreach (GameObject go in myManager.allPig)
-        //{
-        //    if (go != this.gameObject)
-        //    {
-        //        cohesion += go.transform.position;
-        //        num++;
-        //    }
-        //}
+        if (num == 0)
+        {
+            foreach (GameObject go in myManager.allPig)
+            {
+                if (go != this.gameObject)
+                {
+                    cohesion += go.transform.position;
+                    num++;
+                    
+                }
+            }
+        }
 
-        return cohesion;
+
+
+        return (cohesion / num - transform.position).normalized;
     }
 
    Vector3 Align()
@@ -112,10 +117,7 @@ public class flock : MonoBehaviour
 
     Vector3 FollowLeader()
     {
-        Vector3 followLeader = Vector3.zero;
-
-        followLeader = (myManager.lider.transform.position - transform.position).normalized;
-
-        return followLeader;
+       
+        return (myManager.lider.transform.position - transform.position).normalized;
     }
 }

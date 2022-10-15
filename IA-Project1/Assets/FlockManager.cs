@@ -28,8 +28,7 @@ public class FlockManager : MonoBehaviour
         {
             Vector3 pos = this.transform.position + new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));// random position
             Vector3 randomize = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f)); // random vector direction
-            allPig[i] = (GameObject)Instantiate(PigPrefab, pos,
-                                Quaternion.LookRotation(randomize));
+            allPig[i] = (GameObject)Instantiate(PigPrefab, pos, Quaternion.LookRotation(randomize));
             allPig[i].GetComponent<flock>().myManager = this;
         }
     }
