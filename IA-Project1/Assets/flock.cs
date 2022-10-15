@@ -24,7 +24,7 @@ public class flock : MonoBehaviour
         if (freq > 0.5)
         {
             freq -= 0.5f;
-            direction = (Cohesion() + Align() + Separation() + FollowLeader()).normalized * speed;
+            direction = (Cohesion() + Align() + Separation() /*+ FollowLeader()*/).normalized * speed;
         }
 
         transform.rotation = Quaternion.Slerp(transform.rotation,
@@ -65,7 +65,7 @@ public class flock : MonoBehaviour
         //    }
         //}
 
-        return (cohesion / num - transform.position).normalized * speed;
+        return cohesion;
     }
 
    Vector3 Align()

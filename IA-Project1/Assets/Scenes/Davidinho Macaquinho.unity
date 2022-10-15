@@ -2022,7 +2022,7 @@ MonoBehaviour:
   lider: {fileID: 926795513}
   minSpeed: 1.41
   maxSpeed: 3.89
-  neighbourDistance: 2.1
+  neighbourDistance: 1.24
   rotationSpeed: 3.78
 --- !u!4 &125511676
 Transform:
@@ -11176,7 +11176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8124994276938694462, guid: 2ac08407a791dcf4f9f7dab45c4de857, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.475063
+      value: -25.98
       objectReference: {fileID: 0}
     - target: {fileID: 8124994276938694462, guid: 2ac08407a791dcf4f9f7dab45c4de857, type: 3}
       propertyPath: m_LocalRotation.w
