@@ -5,7 +5,7 @@ using UnityEngine;
 public class runners : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject target1, target2, target3, target4;
+    public GameObject target1, target2, target3, target4, target5, target6;
     public float maxVelocity = 6;
     public float slowDistance = 4;
     public float stopDistance = 2;
@@ -38,20 +38,32 @@ public class runners : MonoBehaviour
         Vector3 direction4 = target4.transform.position - transform.position;
         direction4.y = 0f;    // (x, z): position in the floor
 
+        Vector3 direction5 = target5.transform.position - transform.position;
+        direction5.y = 0f;    // (x, z): position in the floor
+
+        Vector3 direction6 = target6.transform.position - transform.position;
+        direction6.y = 0f;    // (x, z): position in the floor
+
         Vector3 movement1 = direction1.normalized * maxVelocity;
         Vector3 movement2 = direction2.normalized * maxVelocity;
         Vector3 movement3 = direction3.normalized * maxVelocity;
         Vector3 movement4 = direction4.normalized * maxVelocity;
+        Vector3 movement5 = direction5.normalized * maxVelocity;
+        Vector3 movement6 = direction6.normalized * maxVelocity;
 
         float angle1 = Mathf.Rad2Deg * Mathf.Atan2(movement1.x, movement1.z);
         float angle2 = Mathf.Rad2Deg * Mathf.Atan2(movement2.x, movement2.z);
         float angle3 = Mathf.Rad2Deg * Mathf.Atan2(movement3.x, movement3.z);
         float angle4 = Mathf.Rad2Deg * Mathf.Atan2(movement4.x, movement4.z);
+        float angle5 = Mathf.Rad2Deg * Mathf.Atan2(movement5.x, movement5.z);
+        float angle6 = Mathf.Rad2Deg * Mathf.Atan2(movement6.x, movement6.z);
 
         Quaternion rotation1 = Quaternion.AngleAxis(angle1, Vector3.up);
         Quaternion rotation2 = Quaternion.AngleAxis(angle2, Vector3.up);
         Quaternion rotation3 = Quaternion.AngleAxis(angle3, Vector3.up);
         Quaternion rotation4 = Quaternion.AngleAxis(angle4, Vector3.up);
+        Quaternion rotation5 = Quaternion.AngleAxis(angle5, Vector3.up);
+        Quaternion rotation6 = Quaternion.AngleAxis(angle6, Vector3.up);
 
         if (Vector3.Distance(target1.transform.position, transform.position) > slowDistance && choose == 1)
         {
@@ -147,7 +159,7 @@ public class runners : MonoBehaviour
                     movSpeed += acceleration * Time.deltaTime;
                     movSpeed = Mathf.Min(movSpeed, maxVelocity);
                     transform.rotation = Quaternion.Slerp(transform.rotation,
-                                                          rotation2, Time.deltaTime * turnSpeed);
+                                                          rotation3, Time.deltaTime * turnSpeed);
                     transform.position += transform.forward.normalized * movSpeed *
                                           Time.deltaTime;
                 }
@@ -160,14 +172,14 @@ public class runners : MonoBehaviour
             move4();
             if (Vector3.Distance(target4.transform.position, transform.position) < slowDistance)
             {
-                choose = 1;
-                move1();
+                choose = 5;
+                move5();
             }
 
 
             if (Vector3.Distance(target4.transform.position, transform.position) == slowDistance)
             {
-                Seek(target1);
+                Seek(target5);
             }
 
             if (Vector3.Distance(target4.transform.position, transform.position) < slowDistance)
@@ -181,7 +193,74 @@ public class runners : MonoBehaviour
                     movSpeed += acceleration * Time.deltaTime;
                     movSpeed = Mathf.Min(movSpeed, maxVelocity);
                     transform.rotation = Quaternion.Slerp(transform.rotation,
-                                                          rotation2, Time.deltaTime * turnSpeed);
+                                                          rotation4, Time.deltaTime * turnSpeed);
+                    transform.position += transform.forward.normalized * movSpeed *
+                                          Time.deltaTime;
+                }
+
+            }
+        }
+
+        if (Vector3.Distance(target5.transform.position, transform.position) > slowDistance && choose == 5)
+        {
+            move5();
+            if (Vector3.Distance(target5.transform.position, transform.position) < slowDistance)
+            {
+                choose = 6;
+                move6();
+            }
+
+
+            if (Vector3.Distance(target5.transform.position, transform.position) == slowDistance)
+            {
+                Seek(target6);
+            }
+
+            if (Vector3.Distance(target5.transform.position, transform.position) < slowDistance)
+            {
+
+                if (Vector3.Distance(target5.transform.position, transform.position) > stopDistance)
+                {
+                    Seek(target5);   // calls to this function should be reduced
+                    turnSpeed += turnAcceleration * Time.deltaTime;
+                    turnSpeed = Mathf.Min(turnSpeed, maxTurnSpeed);
+                    movSpeed += acceleration * Time.deltaTime;
+                    movSpeed = Mathf.Min(movSpeed, maxVelocity);
+                    transform.rotation = Quaternion.Slerp(transform.rotation,
+                                                          rotation5, Time.deltaTime * turnSpeed);
+                    transform.position += transform.forward.normalized * movSpeed *
+                                          Time.deltaTime;
+                }
+
+            }
+        }
+        if (Vector3.Distance(target6.transform.position, transform.position) > slowDistance && choose == 6)
+        {
+            move6();
+            if (Vector3.Distance(target6.transform.position, transform.position) < slowDistance)
+            {
+                choose = 1;
+                move1();
+            }
+
+
+            if (Vector3.Distance(target6.transform.position, transform.position) == slowDistance)
+            {
+                Seek(target1);
+            }
+
+            if (Vector3.Distance(target6.transform.position, transform.position) < slowDistance)
+            {
+
+                if (Vector3.Distance(target6.transform.position, transform.position) > stopDistance)
+                {
+                    Seek(target6);   // calls to this function should be reduced
+                    turnSpeed += turnAcceleration * Time.deltaTime;
+                    turnSpeed = Mathf.Min(turnSpeed, maxTurnSpeed);
+                    movSpeed += acceleration * Time.deltaTime;
+                    movSpeed = Mathf.Min(movSpeed, maxVelocity);
+                    transform.rotation = Quaternion.Slerp(transform.rotation,
+                                                          rotation6, Time.deltaTime * turnSpeed);
                     transform.position += transform.forward.normalized * movSpeed *
                                           Time.deltaTime;
                 }
@@ -218,6 +297,21 @@ public class runners : MonoBehaviour
         void move4()
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation4,
+                                    Time.deltaTime * turnSpeed);
+            transform.position += transform.forward.normalized * movSpeed * Time.deltaTime;
+            movSpeed += acceleration * Time.deltaTime;
+        }
+
+        void move5()
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation5,
+                                    Time.deltaTime * turnSpeed);
+            transform.position += transform.forward.normalized * movSpeed * Time.deltaTime;
+            movSpeed += acceleration * Time.deltaTime;
+        }
+        void move6()
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation6,
                                     Time.deltaTime * turnSpeed);
             transform.position += transform.forward.normalized * movSpeed * Time.deltaTime;
             movSpeed += acceleration * Time.deltaTime;
