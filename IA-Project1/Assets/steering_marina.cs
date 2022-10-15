@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class steering_marina : MonoBehaviour
 {
     public GameObject agent;
-    public GameObject target1, target2;
+    public GameObject target1;
     public float maxSpeed, maxTurnSpeed;
     public float movSpeed, turnSpeed, acceleration, turnAcceleration;
     public float stopDistance;
@@ -24,7 +24,6 @@ public class steering_marina : MonoBehaviour
     void Update()
     {
         if (Vector3.Distance(target1.transform.position, transform.position) < stopDistance) {
-            //ds = 2;
             return;
         }
         Seek(target1); 
