@@ -12,7 +12,6 @@ public class steering_marina : MonoBehaviour
     public float stopDistance;
     public Vector3 movement;
     public Quaternion rotation;
-    //int ds = 1;
 
     // Start is called before the first frame update
     void Start()

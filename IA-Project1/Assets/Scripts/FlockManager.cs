@@ -10,9 +10,6 @@ public class FlockManager : MonoBehaviour
 
     [Header("All Pigs")]
     public Vector3 limits;
-    //public bool bounded;
-    //public bool randomize;
-    public bool followLider;
     public GameObject lider;
 
     [Header("Pig Settings")]
