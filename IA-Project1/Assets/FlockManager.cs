@@ -16,10 +16,10 @@ public class FlockManager : MonoBehaviour
     public GameObject lider;
 
     [Header("Pig Settings")]
-    [Range(0.0f, 5.0f)] public float minSpeed;
-    [Range(0.0f, 5.0f)] public float maxSpeed;
-    [Range(0.0f, 5.0f)] public float neighbourDistance;
-    [Range(0.0f, 5.0f)] public float rotationSpeed;
+    [Range(0.0f, 10.0f)] public float minSpeed;
+    [Range(0.0f, 10.0f)] public float maxSpeed;
+    [Range(0.0f, 10.0f)] public float neighbourDistance;
+    [Range(0.0f, 10.0f)] public float rotationSpeed;
     // Start is called before the first frame update
     void Start()
     {
