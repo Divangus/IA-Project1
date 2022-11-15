@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44909072, g: 0.49916375, b: 0.57571477, a: 1}
+  m_IndirectSpecularColor: {r: 0.44909048, g: 0.4991634, b: 0.5757145, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8975,6 +8975,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6001928799294072990, guid: 86fd8e596d1c632409cd5acbf0796045, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86fd8e596d1c632409cd5acbf0796045, type: 3}
 --- !u!4 &486151188 stripped
@@ -8982,19 +8986,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3768377780570565089, guid: 86fd8e596d1c632409cd5acbf0796045, type: 3}
   m_PrefabInstance: {fileID: 486151187}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &486151189
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316111376}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &486151193
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9021,11 +9012,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_Extents: {x: 3, y: 1, z: 1.25}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 1.23}
   m_TimeToStationary: 0.5
 --- !u!1001 &495466022
 PrefabInstance:
