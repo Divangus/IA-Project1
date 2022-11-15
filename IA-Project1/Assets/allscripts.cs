@@ -7,19 +7,22 @@ using UnityEngine.AI;
 public class allscripts : MonoBehaviour
 {
     public GameObject target;
+    public Collider floor;
+    GameObject[] hidingSpot;
     NavMeshAgent agent;
     public float radius, offset;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        agent = this.GetComponent<NavMeshAgent>();
+        hidingSpot = GameObject.FindGameObjectsWithTag("Hide");
     }
 
     // Update is called once per frame
-    void Update()
+    public void Seek(Vector3 loc)
     {
-        
+        agent.SetDestination(loc);
     }
 
     void wander()
@@ -30,14 +33,11 @@ public class allscripts : MonoBehaviour
         worldTarget.y = 0f;
     }
 
-    //void Seek(Vector3 location)
-    //{
-    //    agent = SetDestination(location);
-    //}
+    public void Flee(Vector3 loc)
+    {
+        Vector3 fleeVec = loc - this.transform.position;
+        agent.SetDestination(this.transform.position - fleeVec);
+    }
 
-    //private NavMeshAgent SetDestination(Vector3 location)
-    //{
 
-    //    return ;
-    //}
 }
