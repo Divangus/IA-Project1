@@ -42,6 +42,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   men: {fileID: 4680844744300403869, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
   bench: {fileID: 4731363833152447829, guid: 7771c02e50845c148830a38f099c87ce, type: 3}
+  benches:
+  - {x: -57, y: 0, z: -41}
   radius: 5
   offset: 3
 --- !u!1101 &-7023017022976526464
@@ -52,8 +54,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: sit
+  - m_ConditionMode: 6
+    m_ConditionEvent: State
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5876679715090313928}
@@ -121,8 +123,7 @@ AnimatorStateMachine:
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
-  m_StateMachineBehaviours:
-  - {fileID: 7379698078068061295}
+  m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 50, y: 110, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
@@ -137,20 +138,8 @@ AnimatorController:
   m_Name: fsm
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: wander
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: close
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: sit
-    m_Type: 4
+  - m_Name: State
+    m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -176,9 +165,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: close
-    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: State
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7596444455363981321}
   m_Solo: 0
@@ -233,18 +222,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f541b4a39c25a49b481749bbe8ea4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7379698078068061295
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2714b5dea2dd5ed4db9d77a9e22986ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  men: {fileID: 4680844744300403869, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
+  bench: {fileID: 4731363833152447829, guid: 7771c02e50845c148830a38f099c87ce, type: 3}
+  benches:
+  - {x: -57, y: 0, z: -41}
 --- !u!1102 &8200036013832966040
 AnimatorState:
   serializedVersion: 6
@@ -281,9 +262,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: sit
-    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: State
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8200036013832966040}
   m_Solo: 0

@@ -26,8 +26,9 @@ public class Wandering : StateMachineBehaviour
         {
             animator.SetInteger("State", 1);
         }
-        else
+        else 
         {
+            animator.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 4f;
             Debug.Log("Making Wander");
             Vector3 localTarget = UnityEngine.Random.insideUnitCircle * radius;
             localTarget += new Vector3(0, 0, offset);
@@ -37,4 +38,9 @@ public class Wandering : StateMachineBehaviour
 
         }
     }
+
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+        
+    //}
 }
