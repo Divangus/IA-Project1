@@ -16,7 +16,7 @@ public class allscripts : MonoBehaviour
     void Start()
     {
         agent = this.GetComponent<NavMeshAgent>();
-        //hidingSpot = GameObject.FindGameObjectsWithTag("Hide");
+        hidingSpot = GameObject.FindGameObjectsWithTag("Hide");
     }
 
     // Update is called once per frame
