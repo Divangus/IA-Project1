@@ -25,7 +25,7 @@ public class allscripts : MonoBehaviour
         agent.SetDestination(loc);
     }
 
-    void wander()
+    public void wander()
     {
         Vector3 localTarget = UnityEngine.Random.insideUnitCircle * radius;
         localTarget += new Vector3(0, 0, offset);

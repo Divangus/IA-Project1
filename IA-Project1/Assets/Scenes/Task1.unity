@@ -33115,21 +33115,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1772938327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772938324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33a7791974d86c9479388da94990a37c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 5
-  offset: 3
-  agent: {fileID: 1772938328}
 --- !u!195 &1772938328
 NavMeshAgent:
   m_ObjectHideFlags: 0
