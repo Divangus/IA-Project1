@@ -12,7 +12,7 @@ public class MoveRandom : BasePrimitiveAction
     public float radius = 5f;
     public float offset = 3f;
     public NavMeshAgent agent;
-    float f = 0.0f;
+    float f = 5.0f;
     GameObject robber;
     Vector3 worldTarget;
 
@@ -39,8 +39,6 @@ public class MoveRandom : BasePrimitiveAction
 
             f = 0.0f;
         }
-
-        
 
         return TaskStatus.RUNNING;
     }
