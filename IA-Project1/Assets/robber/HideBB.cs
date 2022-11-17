@@ -12,10 +12,6 @@ public class HideBB : BasePrimitiveAction
     [Help("Game object to add the component, if no assigned the component is added to the game object of this behavior")]
     public GameObject targetGameobject;
 
-    [OutParam("hide")]
-    [Help("Vector3 for higing.")]
-    public Vector3 hide;
-
     public override void OnStart()
     {
         targetGameobject.GetComponent<NavMeshAgent>().isStopped = false;
