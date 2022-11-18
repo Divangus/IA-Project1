@@ -9,7 +9,7 @@ public class Wandering : StateMachineBehaviour
     public NavMeshAgent men;
     public GameObject bench;
 
-    public Vector3[] benches = { new Vector3(-57, 0, -41) };
+    public Vector3[] benches = { new Vector3(-56.29f, 0, 48.66f) };
 
     public float radius = 5f;
     public float offset = 3f;

@@ -8,12 +8,11 @@ public class NearBench : StateMachineBehaviour
     public NavMeshAgent men;
     public GameObject bench;
 
-    public Vector3[] benches = { new Vector3(-57, 0, -41) };
+    public Vector3[] benches = { new Vector3(-56.29f, 0, -48.66f) };
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 2f;
-
+        men = animator.gameObject.GetComponent<NavMeshAgent>();
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -28,7 +27,8 @@ public class NearBench : StateMachineBehaviour
             animator.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 2f;
             Debug.Log("Approching bench");
             animator.SetInteger("State", 1);
-            men.SetDestination(benches[0]);
+            benches[0].y = 0f;
+            men.destination = benches[0];
         }
     }
 }
