@@ -9,17 +9,20 @@ using UnityEngine.AI;
 [Help("Move the agent to a random position.")]
 public class MoveRandom : BasePrimitiveAction
 {
-    public float radius = 5f;
-    public float offset = 3f;
+
+    [InParam("me")]
+    GameObject me;
+
+    public float radius = 8f;
+    public float offset = 10f;
     public NavMeshAgent agent;
-    float f = 5.0f;
-    GameObject robber;
+    float f = 4.0f;
     Vector3 worldTarget;
 
     public override void OnStart()
     {
-        robber = GameObject.Find("Robber (1)");
-        agent = robber.GetComponent<NavMeshAgent>();
+        
+        agent = me.GetComponent<NavMeshAgent>();
         agent.isStopped = false;
     }
 
@@ -28,12 +31,12 @@ public class MoveRandom : BasePrimitiveAction
         
         f += Time.deltaTime;
 
-        if(f > 5.0f)
+        if(f > 4.0f)
         {
             // parameters: float radius, offset;
             Vector3 localTarget = UnityEngine.Random.insideUnitCircle * radius;
             localTarget += new Vector3(0, 0, offset);
-            worldTarget = robber.transform.TransformPoint(localTarget);
+            worldTarget = me.transform.TransformPoint(localTarget);
             worldTarget.y = 0f;
             agent.destination = worldTarget;
 

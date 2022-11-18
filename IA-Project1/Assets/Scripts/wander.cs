@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class wander : MonoBehaviour
 {
-    public float radius = 5f;
-    public float offset= 3f;
+    public float radius = 8f;
+    public float offset= 10f;
     public NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()

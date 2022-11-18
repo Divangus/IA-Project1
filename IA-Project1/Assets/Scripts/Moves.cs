@@ -10,7 +10,8 @@ using UnityEngine.AI;
 public class Moves : MonoBehaviour
 {
     public GameObject target;
-    public Collider floor;
+    public bool shout = false;
+    Collider floor;
     GameObject[] hidingSpots;
     NavMeshAgent agent;
 
@@ -114,6 +115,7 @@ public class Moves : MonoBehaviour
 
 
         Seek(info.point + chosenDir.normalized);
+        shout = true;
 
     }
 

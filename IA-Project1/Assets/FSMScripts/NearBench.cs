@@ -27,7 +27,6 @@ public class NearBench : StateMachineBehaviour
             animator.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 2f;
             Debug.Log("Approching bench");
             animator.SetInteger("State", 1);
-            benches[0].y = 0f;
             men.destination = benches[0];
         }
     }
