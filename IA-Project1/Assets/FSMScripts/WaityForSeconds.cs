@@ -4,7 +4,7 @@ public class WaitForSecondsExample : MonoBehaviour
 {
     void Start()
     {
-        //StartCoroutine("a");
+        //StartCoroutine("Example");
     }
     IEnumerator Example()
     {

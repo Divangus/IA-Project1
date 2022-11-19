@@ -1,39 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Wandering : StateMachineBehaviour
+public class OnTheBench : StateMachineBehaviour
 {
     public NavMeshAgent men;
-    public Vector3[] benches = { new Vector3(-55,0,-48), new Vector3(-2,0,-49)};
+
+    public Vector3[] benches = { new Vector3(-55, 0, -48), new Vector3(-2, 0, -49) };
+
+    float duration = 0.0f;
+
+    bool a = false;
 
     public float radius = 5f;
     public float offset = 3f;
-
+    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         men = animator.gameObject.GetComponent<NavMeshAgent>();
+        a = false;
     }
 
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log(Vector3.Distance(animator.gameObject.transform.position, benches[0]));
-        if (Vector3.Distance(animator.gameObject.transform.position, benches[0]) < 15f)
+        duration += Time.deltaTime;
+        if (duration > 5.0f)
         {
-            Debug.Log("Changing State");
-            animator.SetInteger("State", 1);
+            Debug.Log("Not Sitting");
+            a = true;
         }
-        else 
+
+        if (a == true)
         {
             animator.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 4f;
-            Debug.Log("Making Wander");
+            //Debug.Log("Making Wander");
             Vector3 localTarget = UnityEngine.Random.insideUnitCircle * radius;
             localTarget += new Vector3(0, 0, offset);
             Vector3 worldTarget = men.transform.TransformPoint(localTarget);
             worldTarget.y = 0f;
             men.destination = worldTarget;
+
+            if (Vector3.Distance(animator.gameObject.transform.position, benches[0]) > 23f)
+            {
+                animator.SetInteger("State", 0);
+            }
         }
+
     }
 }
+

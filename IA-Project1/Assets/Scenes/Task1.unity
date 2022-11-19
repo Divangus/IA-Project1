@@ -12671,75 +12671,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6242260932895798661, guid: e2947d46bde79124c82b000f57bf9ca1, type: 3}
   m_PrefabInstance: {fileID: 590401881}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &591244990
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4680844744300403856, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4680844744300403869, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_Height
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4680844744300403869, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_BaseOffset
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6450059501252660669, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6450059501252660669, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -52.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6450059501252660669, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 6450059501252660669, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -25.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 6450059501252660669, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.097259775
-      objectReference: {fileID: 0}
-    - target: {fileID: 6450059501252660669, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6450059501252660669, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.99525905
-      objectReference: {fileID: 0}
-    - target: {fileID: 6450059501252660669, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6450059501252660669, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6450059501252660669, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -191.163
-      objectReference: {fileID: 0}
-    - target: {fileID: 6450059501252660669, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6466094167687790633, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
-      propertyPath: m_Name
-      value: Pilgrim
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0aba190109d040e449e1f3c89ef5b9f1, type: 3}
 --- !u!1001 &591386079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42182,6 +42113,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1307377094}
   target: {fileID: 1403062325}
+--- !u!1001 &4494052941805778526
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7484177353330922845, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484177353330922845, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -40.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484177353330922845, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484177353330922845, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -47.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484177353330922845, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.097259775
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484177353330922845, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484177353330922845, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.99525905
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484177353330922845, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484177353330922845, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484177353330922845, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -191.163
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484177353330922845, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485610632958302409, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+      propertyPath: m_Name
+      value: Pilgrim
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
 --- !u!1001 &6504291846169150656
 PrefabInstance:
   m_ObjectHideFlags: 0
