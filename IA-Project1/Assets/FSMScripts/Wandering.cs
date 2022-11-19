@@ -7,9 +7,9 @@ using UnityEngine.AI;
 public class Wandering : StateMachineBehaviour
 {
     public NavMeshAgent men;
-    public GameObject bench;
+    //public GameObject bench;
 
-    public Vector3[] benches = { new Vector3(-56.29f, 0, 48.66f) };
+    public Vector3[] benches = { new Vector3(-55,0,-48)};
 
     public float radius = 5f;
     public float offset = 3f;
@@ -24,6 +24,7 @@ public class Wandering : StateMachineBehaviour
         Debug.Log(Vector3.Distance(animator.gameObject.transform.position, benches[0]));
         if (Vector3.Distance(animator.gameObject.transform.position, benches[0]) < 15f)
         {
+            Debug.Log("Changing State");
             animator.SetInteger("State", 1);
         }
         else 

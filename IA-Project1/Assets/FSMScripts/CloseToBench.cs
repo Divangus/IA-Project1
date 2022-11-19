@@ -3,23 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Sitting : StateMachineBehaviour
+public class CloseToBench : StateMachineBehaviour
 {
 
     public NavMeshAgent men;
-    //public GameObject bench;
+    public Vector3[] benches = { new Vector3(-55, 0, -48) };
 
-    public Vector3[] benches = { new Vector3(-2, 0, -48) };
-
+    public float radius = 5f;
+    public float offset = 3f;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        men = animator.gameObject.GetComponent<NavMeshAgent>();
     }
 
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Debug.Log("Approching bench");
+        //animator.SetInteger("State", 1);
+        men.destination = benches[0];
+        benches[0].y = animator.gameObject.transform.position.y;
+        if (animator.gameObject.transform.position == benches[0])
+        {
+            animator.SetInteger("State", 2);
+        }
 
     }
 
