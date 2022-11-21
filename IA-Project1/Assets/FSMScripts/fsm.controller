@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb173833650f4e46a33ccce586844ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  men: {fileID: 9127571767066084477, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+  men: {fileID: 8969041818103442267, guid: 604afca6d3c97dc48a1e086161e5f2cb, type: 3}
   benches:
   - {x: -55, y: 0, z: -48}
   - {x: -2, y: 0, z: -48.6}
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f38f048b3afad3439499b016d8b9f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  men: {fileID: 9127571767066084477, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+  men: {fileID: 8969041818103442267, guid: 604afca6d3c97dc48a1e086161e5f2cb, type: 3}
   benches:
   - {x: -55, y: 0, z: -48}
   radius: 5
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11785800d69d5da4d9ba734ee8e4f167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  men: {fileID: 9127571767066084477, guid: 2240a7f3ce1182e479ab2b084ab44f66, type: 3}
+  men: {fileID: 8969041818103442267, guid: 604afca6d3c97dc48a1e086161e5f2cb, type: 3}
   benches:
   - {x: -55, y: 0, z: -48}
   - {x: -2, y: 0, z: -49}

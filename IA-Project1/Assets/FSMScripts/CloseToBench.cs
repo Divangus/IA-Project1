@@ -12,13 +12,13 @@ public class CloseToBench : StateMachineBehaviour
     public float radius = 5f;
     public float offset = 3f;
 
-    BlackBoard blackboard;
+    Blackboard blackboard;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         men = animator.gameObject.GetComponent<NavMeshAgent>();
-        blackboard = animator.GetComponent<BlackBoard>();
+        blackboard = animator.GetComponent<Blackboard>();
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
