@@ -7,7 +7,7 @@ public class OnTheBench : StateMachineBehaviour
 {
     public NavMeshAgent men;
 
-    public Vector3[] benches = { new Vector3(-55, 0, -48), new Vector3(-2, 0, -49) };
+    public Vector3[] benches = { new Vector3(-55, 0, -48), new Vector3(-2, 0, -48)};
     float duration = 0.0f;
     bool a = false;
 
@@ -31,6 +31,14 @@ public class OnTheBench : StateMachineBehaviour
         {
             Debug.Log("Not Sitting");
             a = true;
+            for(int i =0; i < benches.Length; i++)
+            {
+                if (blackboard.selectedBench == benches[i])
+                {
+                    blackboard.someone[i] = false;
+                }
+            }
+            blackboard.flag = false;
         }
 
         if (a == true)

@@ -68,7 +68,8 @@ MonoBehaviour:
   men: {fileID: 8969041818103442267, guid: 604afca6d3c97dc48a1e086161e5f2cb, type: 3}
   benches:
   - {x: -55, y: 0, z: -48}
-  - {x: -2, y: 0, z: -48.6}
+  - {x: -2, y: 0, z: -48}
+  selectedBench: {x: 0, y: 0, z: 0}
   radius: 5
   offset: 3
 --- !u!114 &-4208402328679604828
@@ -152,6 +153,7 @@ MonoBehaviour:
   benches:
   - {x: -55, y: 0, z: -48}
   - {x: -2, y: 0, z: -48.6}
+  selectedBench: {x: 0, y: 0, z: 0}
   radius: 5
   offset: 3
 --- !u!91 &9100000
@@ -197,6 +199,7 @@ MonoBehaviour:
   men: {fileID: 8969041818103442267, guid: 604afca6d3c97dc48a1e086161e5f2cb, type: 3}
   benches:
   - {x: -55, y: 0, z: -48}
+  - {x: -2, y: 0, z: -48}
   radius: 5
   offset: 3
 --- !u!1101 &2578027613384541298
@@ -239,7 +242,7 @@ MonoBehaviour:
   men: {fileID: 8969041818103442267, guid: 604afca6d3c97dc48a1e086161e5f2cb, type: 3}
   benches:
   - {x: -55, y: 0, z: -48}
-  - {x: -2, y: 0, z: -49}
+  - {x: -2, y: 0, z: -48}
   radius: 5
   offset: 3
 --- !u!1102 &5876679715090313928

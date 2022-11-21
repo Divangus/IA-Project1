@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Blackboard:MonoBehaviour
 {
-    public float dist2Sit = 10f;
-    //public Transform oldPerson;
-    //public GameObject bank;
-
     public Vector3 selectedBench;
+
+    public bool[] someone = { false, false};
+
+    public bool flag = false;
 }
