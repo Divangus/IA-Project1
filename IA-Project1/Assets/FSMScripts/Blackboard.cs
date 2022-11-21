@@ -8,5 +8,5 @@ public class Blackboard:MonoBehaviour
 
     public bool[] someone = { false, false};
 
-    public bool flag = false;
+    //public bool[] flag = { false, false };
 }

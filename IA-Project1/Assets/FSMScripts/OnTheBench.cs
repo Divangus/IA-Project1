@@ -30,15 +30,16 @@ public class OnTheBench : StateMachineBehaviour
         if (duration > 5.0f)
         {
             Debug.Log("Not Sitting");
-            a = true;
+           
             for(int i =0; i < benches.Length; i++)
             {
                 if (blackboard.selectedBench == benches[i])
                 {
                     blackboard.someone[i] = false;
                 }
+                //blackboard.flag[i] = false;
             }
-            blackboard.flag = false;
+            a = true;
         }
 
         if (a == true)
