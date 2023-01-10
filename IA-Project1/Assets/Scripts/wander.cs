@@ -5,9 +5,11 @@ using UnityEngine.AI;
 
 public class wander : MonoBehaviour
 {
-    public float radius = 8f;
-    public float offset= 10f;
+    float radius = 8f;
+    float offset= 10f;
     public NavMeshAgent agent;
+    float f = 4.0f;
+    Vector3 worldTarget;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +19,18 @@ public class wander : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // parameters: float radius, offset;
-        Vector3 localTarget = UnityEngine.Random.insideUnitCircle * radius;
-        localTarget += new Vector3(0, 0, offset);
-        Vector3 worldTarget = transform.TransformPoint(localTarget);
-        worldTarget.y = 0f;
-        agent.destination =worldTarget;
+        f += Time.deltaTime;
+
+        if (f > 4.0f)
+        {
+            // parameters: float radius, offset;
+            Vector3 localTarget = UnityEngine.Random.insideUnitCircle * radius;
+            localTarget += new Vector3(0, 0, offset);
+            worldTarget = transform.TransformPoint(localTarget);
+            worldTarget.y = 0f;
+            agent.destination = worldTarget;
+
+            f = 0.0f;
+        }
     }
 }

@@ -32,7 +32,7 @@ MonoBehaviour:
     <child>\r\n              <ActionNode id=\"6\" />\r\n            </child>\r\n         
     </GuardAndNode>\r\n        </elem>\r\n      </children>\r\n      <inputParams
     />\r\n      <outputParams />\r\n      <localParams />\r\n    </PrioritySelectorNode>\r\n   
-    <ConditionEvalNode id=\"4\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\" name=\"MyConditions/Is
+    <ConditionEvalNode id=\"4\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\" name=\"MyConditions/Is
     Cop Near?\">\r\n      <inputParams />\r\n      <outputParams />\r\n      <localParams
     />\r\n    </ConditionEvalNode>\r\n    <ActionNode id=\"3\" action=\"MyActions/MoveToRandomPosition\">\r\n     
     <inputParams>\r\n        <inputValues>\r\n          <entry name=\"me\" type=\"UnityEngine.GameObject\"
@@ -84,6 +84,6 @@ MonoBehaviour:
     the game object towards a given target by using a NavMeshAgent\" cardinality=\"0\"
     hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"6\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 0.8
+  zoom: 0.6
   subslist: []
   _guid: 4ddea211c7662bd458605202fbcc3aa0
